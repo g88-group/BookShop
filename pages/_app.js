@@ -1,6 +1,10 @@
-import { useState } from "react";
-import { ThemeProvider } from "styled-components";
-import GlobalStyle, { darkTheme, lightTheme } from "../styles/GlobalsStyle";
+import { useState } from "react"
+import "bootstrap/dist/css/bootstrap.css";
+import { ThemeProvider } from "styled-components"
+import GlobalStyle, { darkTheme, lightTheme } from "../styles/GlobalsStyle"
+import Header from "../Containers/Header/Header";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSun, faMoon } from "@fortawesome/free-regular-svg-icons";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
@@ -11,6 +15,11 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyle />
+      <Header>
+        <button className="btn" onClick={toggleTheme}>
+          <FontAwesomeIcon  icon={theme == "light" ? faMoon : faSun} />
+        </button>
+      </Header>
       <Component {...pageProps} />
     </ThemeProvider>
   );

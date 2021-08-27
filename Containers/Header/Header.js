@@ -1,10 +1,16 @@
 import React from 'react'
+import { HeaderWrapper } from './HeaderWrapper';
 
-const Header = () => {
+const Header = ({children}) => {
     return (
-        <div>
-            
-        </div>
+        <HeaderWrapper>
+            <div className="header">
+                <img src="" alt="" />
+                <div>
+                    {children}
+                </div>
+            </div>
+        </HeaderWrapper>
     )
 }
 

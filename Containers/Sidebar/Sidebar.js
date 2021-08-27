@@ -1,14 +1,15 @@
 import React from 'react'
 import SidebarWrapper from './SidebarWrapper'
 import Link from "next/link"
-const Sidebar = () => {
+const Sidebar = ({ data }) => {
     return (
         <SidebarWrapper>
-            <div className="menu">
+            <div className="menu shadow">
                 <ul>
-                    <li>
-                        <Link href=""><a className="sidebar_link"> Link 1</a></Link>
-                    </li>
+                    {data.results.map((v, i) => <li key={i}>
+                        <Link href={"/" + v.list_name_encoded}><a className="sidebar_link">{v.list_name_encoded}</a></Link>
+                    </li>)}
+
                 </ul>
             </div>
         </SidebarWrapper>

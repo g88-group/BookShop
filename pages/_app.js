@@ -1,4 +1,5 @@
 import { useState } from "react"
+import "bootstrap/dist/css/bootstrap.css";
 import { ThemeProvider } from "styled-components"
 import GlobalStyle, { darkTheme, lightTheme } from "../styles/GlobalsStyle"
 

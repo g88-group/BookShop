@@ -2,10 +2,10 @@ import React from 'react'
 import Sidebar from '../Sidebar'
 import ContainerWrapper from './ContainerWrapper'
 
-const Container = ({ children }) => {
+const Container = ({ children, data }) => {
     return (
         <ContainerWrapper>
-            <Sidebar />
+            <Sidebar data={data} />
             {children}
         </ContainerWrapper>
     )

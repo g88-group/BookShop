@@ -12,3 +12,13 @@ export const getList = async () => {
         return { data: [] }
     }
 }
+
+
+export const getBooks = async (category = list) => {
+    try {
+        const res = await axios.get(`${baseUrl}/lists/current/${category}.json?api-key=${apiKey}`);
+        return { data: res.data }
+    } catch (error) {
+        return { data: [] }
+    }
+}

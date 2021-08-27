@@ -7,6 +7,7 @@ export const lightTheme = {
     text: '#363537',
     toggleBorder: '#FFF',
     background: '#363537',
+    titleColor: "blue"
 }
 
 export const darkTheme = {
@@ -14,6 +15,7 @@ export const darkTheme = {
     text: '#FAFAFA',
     toggleBorder: '#6B8096',
     background: '#999',
+    titleColor: "red"
 }
 
 const GlobalStyle = createGlobalStyle`
@@ -22,6 +24,11 @@ body , h1, h2 , h3, h4, h5, h6, p, a  {
     margin: 0;
     padding: 0;
     font-family: ${Roboto};
+    background-color: ${({ theme }) => theme.body};
+}
+*{
+    box-sizing: border-box;
+    transition: .3s;
 }
 ul, li {
     list-style-type: none;

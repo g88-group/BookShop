@@ -15,6 +15,9 @@ height: 100vh;
             font-weight: 600;
             font-size: 15px;
             border: 1px solid rgba(0 0 0 / 0.2);
+            &.active {
+                color: crimson;
+            }
     }
 }
 `;

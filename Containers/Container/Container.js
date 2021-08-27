@@ -1,11 +1,14 @@
-import React from 'react'
+import React from "react";
+import Sidebar from "../Sidebar";
+import ContainerWrapper from "./ContainerWrapper";
 
-const Container = () => {
-    return (
-        <div>
-            Home
-        </div>
-    )
-}
+const Container = ({ children, data }) => {
+  return (
+    <ContainerWrapper>
+      <Sidebar data={data} />
+      {children}
+    </ContainerWrapper>
+  );
+};
 
 export default Container;

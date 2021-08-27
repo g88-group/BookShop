@@ -1,5 +1,6 @@
+import { useState } from "react";
 import { ThemeProvider } from "styled-components";
-import { darkTheme } from "../styles/GlobalsStyle";
+import GlobalStyle, { darkTheme, lightTheme } from "../styles/GlobalsStyle";
 
 function MyApp({ Component, pageProps }) {
   const [theme, setTheme] = useState("light");
@@ -9,7 +10,8 @@ function MyApp({ Component, pageProps }) {
   };
   return (
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
-      <Component {...pageProps} />;
+      <GlobalStyle />
+      <Component {...pageProps} />
     </ThemeProvider>
   );
 }

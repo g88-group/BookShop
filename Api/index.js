@@ -9,11 +9,19 @@ export const getList = async () => {
     try {
         const res = axios.get(urlList);
         return {
-            data: (await res).data
+            data: res.data
         }
     } catch (error) {
         return {
             data: []
         }
+    }
+}
+
+export const getBooks = async () => {
+    try {
+        const res =  await axios.get(`${baseUrl}/list/current${category}.json?api-key=${apiKey}`);
+    } catch (error) {
+        return { data : []}
     }
 }

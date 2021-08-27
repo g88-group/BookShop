@@ -1,7 +1,13 @@
+import Container from "../Containers/Container";
+import HomeWrapper from "../Wrappers/HomeWrapper";
 
 
 export default function Home() {
   return (
-    <div>Home</div>
+    <Container>
+      <HomeWrapper  >
+
+      </HomeWrapper>
+    </Container>
   )
 }

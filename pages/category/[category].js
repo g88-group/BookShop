@@ -1,7 +1,7 @@
 import React from 'react'
 import { getBooks, getList } from '../../Api';
 import Container from '../../Containers/Container';
-import Books from '../books';
+import Books from '../../Containers/Books/books';
 
 const Category = ({ listdata, booksdata }) => {
   

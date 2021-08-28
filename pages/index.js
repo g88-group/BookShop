@@ -1,7 +1,7 @@
 import { getBooks, getList } from "../Api";
 import Container from "../Containers/Container";
 import HomeWrapper from "../Wrappers/HomeWrapper";
-import Books from "./books";
+import Books from "../Containers/Books/books";
 
 
 export default function Home({ listdata, booksdata }) {

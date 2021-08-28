@@ -1,7 +1,7 @@
-import React from "react";
-import Header from "../Header/Header";
-import Sidebar from "../Sidebar";
-import ContainerWrapper from "./ContainerWrapper";
+import React from 'react'
+import Header from '../Header'
+import Sidebar from '../Sidebar'
+import ContainerWrapper from './ContainerWrapper'
 
 const Container = ({ children, data }) => {
     return (

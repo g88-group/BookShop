@@ -1,7 +1,7 @@
 import React from 'react'
-import { HeaderWrapper } from './HeaderWrapper';
+import HeaderWrapper from './HeaderWrapper'
 
-const Header = ({children}) => {
+const Header = ({ children }) => {
     return (
         <HeaderWrapper>
             <div className="header">
@@ -14,4 +14,4 @@ const Header = ({children}) => {
     )
 }
 
-export default Header;
+export default Header

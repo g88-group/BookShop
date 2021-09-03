@@ -1,13 +1,64 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useSelector } from 'react-redux'
 import HeaderWrapper from './HeaderWrapper'
-
-const Header = ({ children }) => {
+import * as t from "../../redux/types";
+import { dispatch } from '../../redux/store';
+import Link from 'next/link';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun, faUser } from '@fortawesome/free-regular-svg-icons';
+import { faBars, faSearch, faShoppingCart, faTimes } from '@fortawesome/free-solid-svg-icons';
+const Header = ({ toggle, theme }) => {
+    const [searchBooks, setSearchBooks] = useState('');
+    const booksdata = useSelector(state => state.BooksReducer.data);
+    const filterData = booksdata.results?.books?.filter(v => v.title.toLowerCase().includes(searchBooks.trim().toLowerCase()));
+    const booksData = () => {
+        const action = { type: t.DATA_BOOKS3, payload: filterData };
+        dispatch(action);
+    }
+    booksData();
+    const [searchShow, setSearchShow] = useState(false);
+    const showSearch = () => {
+        setSearchShow(!searchShow);
+    }
+    const sidebarshow = () => {
+        const action = { type: t.SIDEBAR_SHOW }
+        dispatch(action)
+    }
     return (
         <HeaderWrapper>
             <div className="header">
-                <img src="" alt="" />
+                <Link href="#"><a className="navbar_logo">Bookshop</a></Link>
+                <div className={`input_search_container px-2 d-flex align-items-center ${searchShow && "top"}`}>
+                    <input type="text"
+                        className="form-control shadow-none search_input"
+                        placeholder="Search..."
+                        onChange={event => setSearchBooks(event.target.value)} />
+                    <button className="btn d-block d-lg-none ms-2" onClick={showSearch}>
+                        <FontAwesomeIcon icon={faTimes} />
+                    </button>
+                </div>
+                <div className="nav_menu">
+                    <div>
+                        <Link href="#"><a className="navbar_link">Books</a></Link>
+                        <Link href="#"><a className="navbar_link">Audiobooks</a></Link>
+                        <Link href="#"><a className="navbar_link">Stationery & gifts</a></Link>
+                        <Link href="#"><a className="navbar_link">Blog</a></Link>
+                    </div>
+
+                </div>
                 <div>
-                    {children}
+                    <button className="btn me-2">
+                        <FontAwesomeIcon icon={faUser} />
+                    </button>
+                    <button className="btn me-2" onClick={showSearch}>
+                        <FontAwesomeIcon icon={faSearch} />
+                    </button>
+                    <button className="btn me-2">
+                        <FontAwesomeIcon icon={faShoppingCart} />
+                    </button>
+                    <button className="btn me-2" onClick={sidebarshow}>
+                        <FontAwesomeIcon icon={faBars} />
+                    </button>
                 </div>
             </div>
         </HeaderWrapper>

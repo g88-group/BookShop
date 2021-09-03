@@ -1,9 +1,7 @@
 import styled from "styled-components";
 
-const BooksWrapper = styled.div`
-    .books{
-        .books_card {
-                .book_img {
+const IdWrapper = styled.div`
+     .book_img {
                     height: 400px;
                     object-fit: 100% , 100%;
                 }
@@ -20,15 +18,12 @@ const BooksWrapper = styled.div`
                 .buy_btn {
                     width: 100%;
                     text-align: center;
+                    display: block;
                     padding: 10px;
                     font-size: 10px;
                     font-weight: bold;
                     border: 1px solid #2C73D2;
                     color: #2C73D2;
                 }
-        }
-
-      
-    }
 `;
-export default BooksWrapper;
+export default IdWrapper;

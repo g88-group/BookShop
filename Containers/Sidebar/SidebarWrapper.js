@@ -1,22 +1,33 @@
 import styled from "styled-components";
 const SidebarWrapper = styled.div`
-height: 100vh;
+height: 100%;
         .menu {
-            width: 250px;
-            height: 100%;
-            overflow: auto;
-            background-color: ${({ theme }) => theme.body};
-            padding: 40px 0;
+            position: fixed;
+            top: -150%;
+            left: 0px;
+            width: 100%;
+            background-color: white;
+            z-index: 100;
+            max-height: 80vh;
+            overflow-y: auto;
+            overflow-x: hidden;
+            &.show {
+                top: 65px;
+                height: auto;
+            }
         .sidebar_link {
             display: block;
-            padding: 10px;
-            color: ${({ theme }) => theme.text};
             text-transform: capitalize;
+            padding: 5px;
             font-weight: 600;
-            font-size: 15px;
-            border: 1px solid rgba(0 0 0 / 0.2);
+            font-size: 13px;
+            color: rgba(0 0 0 / 0.5);
+            &:hover {
+                color: crimson;
+            }
             &.active {
                 color: crimson;
+                border-right: 2px solid crimson;
             }
     }
 }

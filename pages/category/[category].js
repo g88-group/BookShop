@@ -2,12 +2,18 @@ import React from 'react'
 import { getBooks, getList } from '../../Api';
 import Container from '../../Containers/Container';
 import Books from '../../Containers/Books/books';
+import * as t from "../../redux/types";
+import { dispatch } from '../../redux/store';
 
 const Category = ({ listdata, booksdata }) => {
-  
+    const dataBooks = () => {
+        const action = { type: t.DATA_BOOKS2, payload: booksdata }
+        dispatch(action);
+    }
+    dataBooks();
     return (
         <Container data={listdata}>
-            <Books data={booksdata} />
+            <Books />
         </Container>
     )
 }

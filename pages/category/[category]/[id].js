@@ -28,7 +28,7 @@ const BookPage = ({ listdata, booksdata }) => {
                         <div className="col-10">
                             <div className="row">
                                 <div className="col-sm-6 col-lg-4">
-                                    <img src={data.book_image} className="w-100 h-100" alt="" />
+                                    <img src={data.book_image} className="w-100 h-100 rounded-3" alt="" />
                                 </div>
                                 <div className="col-lg-8 d-flex flex-column justify-content-between">
                                     <div>

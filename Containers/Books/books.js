@@ -16,7 +16,7 @@ const Books = () => {
                 <div className="row w-100 m-0">
                     {filteredData?.map((v, i) => <div className="col-md-6 col-lg-4 col-xl-3 p-3 books_card" key={i}>
                         <div className="d-flex flex-column h-100  p-2 bg-white  shadow rounded-3">
-                            <Link href={`${category ? category : "category/hardcover-nonfiction"}${v.book_uri.slice(10)}`}>
+                            <Link href={`${category ? category : "category/combined-print-and-e-book-fiction"}${v.book_uri.slice(10)}`}>
                                 <a className="d-flex flex-column h-100 books_link rounded-3">
                                     <img className="book_img w-100 rounded-3" src={v.book_image} alt="" />
                                     <div className="book_info p-3">

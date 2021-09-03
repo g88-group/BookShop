@@ -31,5 +31,12 @@ height: 100%;
             }
     }
 }
+@media screen and (max-width: 500px) {
+    .menu {
+        &.show {
+            top: 57px;
+        }
+    }
+}
 `;
 export default SidebarWrapper;

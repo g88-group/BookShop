@@ -5,6 +5,8 @@ import { useSelector } from 'react-redux';
 import { dispatch } from '../../redux/store';
 import * as t from "../../redux/types";
 import { useRouter } from 'next/router';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBook } from '@fortawesome/free-solid-svg-icons';
 const Sidebar = ({ data }) => {
     const sidebarShow = useSelector(state => state.BooksReducer.sidebar);
     const sidebarshow = () => {
@@ -20,7 +22,7 @@ const Sidebar = ({ data }) => {
                 <div className="row">
                     {data?.results?.map((v, i) => <div className="col-sm-6 col-md-4 col-lg-3" key={i}>
                         <Link href={"/category/" + v.list_name_encoded}>
-                            <a className={`sidebar_link ${category == v.list_name_encoded && "active"}`} onClick={sidebarshow}>{v.list_name_encoded}</a>
+                            <a className={`sidebar_link ${category == v.list_name_encoded && "active"}`} onClick={sidebarshow}> <FontAwesomeIcon icon={ faBook } className="me-2" />  {v.list_name_encoded}</a>
                         </Link>
                     </div>)}
 

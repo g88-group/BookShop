@@ -8,7 +8,7 @@ height: 100%;
             width: 100%;
             background-color: white;
             z-index: 100;
-            max-height: 80vh;
+            max-height: 100vh;
             overflow-y: auto;
             overflow-x: hidden;
             &.show {

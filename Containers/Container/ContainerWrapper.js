@@ -7,6 +7,7 @@ width: 100%;
 }
 .home_container {
     width: 100%;
+    height: 100vh;
     min-height: 100vh;
     max-height: 100vh;
     background-image: url("https://images.unsplash.com/photo-1480561807109-e2aa33f23be8?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1000&q=80");
@@ -44,5 +45,19 @@ h2::before{
 .container_content {
     padding: 15px;
 }
+.down {
+    left: 50%;
+    animation: animatedown 2s linear infinite;
+}
+
+@keyframes animatedown {
+     0%  {
+         bottom: 100px;
+     }
+      100%  {
+         bottom: 60px;
+     }
+     
+ }
 `;
 export default ContainerWrapper;

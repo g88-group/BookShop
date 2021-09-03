@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { ThemeProvider } from "styled-components";
 const SidebarWrapper = styled.div`
 height: 100%;
         .menu {

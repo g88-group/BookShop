@@ -30,4 +30,4 @@ const Sidebar = ({ data }) => {
     )
 }
 
-export default Sidebar
+export default Sidebar;

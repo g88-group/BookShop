@@ -19,7 +19,7 @@ export default function Home({ listdata, booksdata }) {
         </div>
       </HomeWrapper>
     </Container>
-  )
+  );
 }
 
 export const getServerSideProps = async () => {

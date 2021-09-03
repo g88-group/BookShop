@@ -65,4 +65,4 @@ const Header = ({ toggle, theme }) => {
     )
 }
 
-export default Header
+export default Header;

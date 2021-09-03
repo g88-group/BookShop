@@ -18,4 +18,4 @@ const Container = ({ children, data }) => {
     )
 }
 
-export default Container
+export default Container;

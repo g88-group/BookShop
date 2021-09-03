@@ -14,7 +14,7 @@ Router.events.on("routeChangeStart", () => NProgress.start());
 Router.events.on("routeChangeComplete", () => NProgress.done());
 Router.events.on("routeChangeError", () => NProgress.done());
 function MyApp({ Component, pageProps }) {
-  const [theme, setTheme] = useState("light")
+  const [theme, setTheme] = useState("light");
 
   const toggleTheme = () => {
     theme == 'light' ? setTheme('dark') : setTheme('light')
@@ -28,4 +28,4 @@ function MyApp({ Component, pageProps }) {
   </Provider>
 }
 
-export default MyApp
+export default MyApp;

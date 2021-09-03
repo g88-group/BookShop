@@ -65,7 +65,7 @@ const BookPage = ({ listdata, booksdata }) => {
                                         <p>Weeks on list {data.weeks_on_list}</p>
                                     </div>
                                     <div className="row">
-                                        {data.buy_links.map((v, i) => <div key={i} className="col-6 col-md-4 mb-2"> <a target="_blank" href={v.url} className="buy_btn"> Buy from {v.name} </a></div>)}
+                                        {data.buy_links.map((v, i) => <div key={i} className="col-6 col-md-4 mb-2"> <a href={v.url} className="buy_btn"> Buy from {v.name} </a></div>)}
                                     </div>
                                 </div>
                             </div>

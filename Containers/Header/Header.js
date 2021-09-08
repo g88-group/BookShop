@@ -11,6 +11,7 @@ const Header = ({ toggle, theme }) => {
     const [searchBooks, setSearchBooks] = useState('');
     const booksdata = useSelector(state => state.BooksReducer.data);
     const filterData = booksdata.results?.books?.filter(v => v.title.toLowerCase().includes(searchBooks.trim().toLowerCase()));
+    const sidebarShow = useSelector(state => state.BooksReducer.sidebar);
     const booksData = () => {
         const action = { type: t.DATA_BOOKS3, payload: filterData };
         dispatch(action);
@@ -42,7 +43,7 @@ const Header = ({ toggle, theme }) => {
                         <Link href="#"><a className="navbar_link">Books</a></Link>
                         <Link href="#"><a className="navbar_link">Audiobooks</a></Link>
                         <Link href="#"><a className="navbar_link">Stationery & gifts</a></Link>
-                        <Link href="#"><a className="navbar_link">Blog</a></Link>
+                        <a href="https://github.com/g88-group" className="navbar_link">About Us</a>
                     </div>
 
                 </div>
@@ -57,7 +58,7 @@ const Header = ({ toggle, theme }) => {
                         <FontAwesomeIcon icon={faShoppingCart} />
                     </button>
                     <button className="btn me-2" onClick={sidebarshow}>
-                        <FontAwesomeIcon icon={faBars} />
+                        <FontAwesomeIcon icon={sidebarShow ? faTimes : faBars} />
                     </button>
                 </div>
             </div>

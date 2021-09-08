@@ -8,7 +8,6 @@ import { getBooks, getList } from '../../../Api';
 import Container from '../../../Containers/Container';
 import { dispatch } from '../../../redux/store';
 import * as t from "../../../redux/types";
-import Link from 'next/link';
 import IdWrapper from '../../../Wrappers/IdWrapper';
 const BookPage = ({ listdata, booksdata }) => {
     const datas = () => {
@@ -19,7 +18,7 @@ const BookPage = ({ listdata, booksdata }) => {
     const router = useRouter();
     const id = router.query.id;
     const filterData = useSelector(state => state.BooksReducer.filterData);
-    const data = filterData.filter(data => data.book_uri.slice(11) == id)[0];
+    const data = filterData?.filter(data => data.book_uri.slice(11) == id)[0] || {};
     return (
         <Container data={listdata}>
             <IdWrapper>
@@ -65,7 +64,7 @@ const BookPage = ({ listdata, booksdata }) => {
                                         <p>Weeks on list {data.weeks_on_list}</p>
                                     </div>
                                     <div className="row">
-                                        {data.buy_links.map((v, i) => <div key={i} className="col-6 col-md-4 mb-2"> <a href={v.url} className="buy_btn"> Buy from {v.name} </a></div>)}
+                                        {data.buy_links?.map((v, i) => <div key={i} className="col-6 col-md-4 mb-2"> <a href={v.url} className="buy_btn"> Buy from {v.name} </a></div>)}
                                     </div>
                                 </div>
                             </div>

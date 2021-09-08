@@ -8,6 +8,7 @@ import { faMoon, faSun } from "@fortawesome/free-regular-svg-icons";
 import { Provider } from "react-redux";
 import store from "../redux/store";
 import Router, { useRouter } from "next/router";
+import Head from "next/head"
 import NProgress from "nprogress";
 import "nprogress/nprogress.css";
 Router.events.on("routeChangeStart", () => NProgress.start());
@@ -20,6 +21,9 @@ function MyApp({ Component, pageProps }) {
     theme == 'light' ? setTheme('dark') : setTheme('light')
   }
   return <Provider store={store}>
+    <Head>
+      <script src="//code-eu1.jivosite.com/widget/3sNV9ryVBh" async></script>
+    </Head>
     <ThemeProvider theme={theme == "light" ? lightTheme : darkTheme}>
       <GlobalStyle />
       <Header toggle={toggleTheme} theme={theme} />

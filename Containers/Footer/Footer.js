@@ -4,7 +4,24 @@ const Footer = () => {
     return (
         <FooterWrapper>
             <div className="container">
-                <h2 className="text-center m-0"><a target="_blank" href="https://github.com/g88-group/BookShop">Create by SID group</a> </h2>
+                <div className="row justify-content-center">
+                    <div className="col-md-6">
+                        <ul className="list-group-horizontal list-group">
+                            <li className="list-group-item-action text-center">
+                                <a href="#"> Sardor </a>
+                                <p className="m-0">+998903320522</p>
+                                </li>
+                            <li className="list-group-item-action text-center">
+                                <a href="#"> Islom </a>
+                                <p className="m-0">+998903320522</p>
+                                </li>
+                            <li className="list-group-item-action text-center">
+                                <a href="#"> Doston </a>
+                                <p className="m-0">+998903320522</p>
+                                </li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </FooterWrapper>
     )
